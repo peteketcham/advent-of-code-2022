@@ -40,9 +40,9 @@ def inside_2(pairs):
     if one[1] >= two[0] and one[1] <= two[1]:
         return True
     return False
-    
-    
-    
+
+
+
 def inside(pairs):
     """ docstring lol """
     one = pairs[0]
