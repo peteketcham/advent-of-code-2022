@@ -41,11 +41,28 @@ The second Elf is carrying one food item with 4000 Calories.
 The third Elf is carrying food with 5000 and 6000 Calories, a total of 11000 Calories.
 The fourth Elf is carrying food with 7000, 8000, and 9000 Calories, a total of 24000 Calories.
 The fifth Elf is carrying one food item with 10000 Calories.
-In case the Elves get hungry and need extra snacks, they need to know which Elf to ask: they'd like to know how many Calories are being carried by the Elf carrying the most Calories. In the example above, this is 24000 (carried by the fourth Elf).
+In case the Elves get hungry and need extra snacks, they need to know which Elf to ask:
+they'd like to know how many Calories are being carried by the Elf carrying the most Calories.
+In the example above, this is 24000 (carried by the fourth Elf).
 """
 
+
 def main():
-    pass
+    """ things happen here """
+    elves = []
+    with open("input.txt", "r") as elf_diet:
+        elf = []
+        for line in elf_diet:
+            line = line.strip('\n')
+            # print(line)
+            if line == '':
+                # print(elf)
+                elves.append(elf)
+                elf = []
+            else:
+                elf.append(int(line))
+    elves = sorted((sum(x) for x in elves), reverse=True)
+    print(sum(elves[0:3]))
 
 
 if __name__ == "__main__":
